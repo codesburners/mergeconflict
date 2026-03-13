@@ -2,6 +2,19 @@
 
 A hands-on educational repository designed to demonstrate Git merge conflicts — how they occur, what they look like, and how to resolve them.
 
+---
+
+## 📖 Table of Contents
+
+- [What is this project?](#what-is-this-project)
+- [What makes it unique?](#what-makes-it-unique)
+- [How to use this repository](#how-to-use-this-repository)
+- [Key concepts demonstrated](#key-concepts-demonstrated)
+- [Repository structure](#repository-structure)
+- [Contributing](#contributing)
+
+---
+
 ## What is this project?
 
 This repository is a practical learning tool for developers who want to understand Git merge conflicts. Instead of reading abstract documentation, you can explore real branches and pull requests that caused actual conflicts, see exactly what the conflict markers look like, and study how the resolution was applied.
@@ -21,14 +34,18 @@ Unlike most merge-conflict tutorials that walk you through a hypothetical scenar
 
 ## How to use this repository
 
-### 1. Clone the repository
+<details>
+<summary>📥 <strong>Step 1 — Clone the repository</strong></summary>
 
 ```bash
 git clone https://github.com/codesburners/mergeconflict.git
 cd mergeconflict
 ```
 
-### 2. Explore the branches
+</details>
+
+<details>
+<summary>🌿 <strong>Step 2 — Explore the branches</strong></summary>
 
 ```bash
 git branch -a
@@ -38,7 +55,10 @@ Two key branches exist:
 - **`branch1`** — made an edit to `test.txt`
 - **`branch2`** — made a conflicting edit to the same line in `test.txt`
 
-### 3. Reproduce the conflict
+</details>
+
+<details>
+<summary>⚡ <strong>Step 3 — Reproduce the conflict</strong></summary>
 
 ```bash
 # Start fresh from main
@@ -62,7 +82,10 @@ city:Bengaluru
 >>>>>>> origin/branch2
 ```
 
-### 4. Resolve the conflict
+</details>
+
+<details>
+<summary>✅ <strong>Step 4 — Resolve the conflict</strong></summary>
 
 Edit `test.txt` to keep the version you want, remove the conflict markers, then:
 
@@ -71,11 +94,36 @@ git add test.txt
 git commit -m "Resolve merge conflict"
 ```
 
+</details>
+
 ## Key concepts demonstrated
 
-- **Merge conflict** — occurs when two branches edit the same part of the same file and Git cannot automatically decide which change to keep.
-- **Conflict markers** — `<<<<<<<`, `=======`, and `>>>>>>>` are inserted by Git to highlight the competing changes.
-- **Manual resolution** — a developer must review the conflicting sections, decide on the final content, and complete the merge with a commit.
+<details>
+<summary>🔀 <strong>What is a merge conflict?</strong></summary>
+
+A **merge conflict** occurs when two branches edit the same part of the same file and Git cannot automatically decide which change to keep.
+
+</details>
+
+<details>
+<summary>🏷️ <strong>What are conflict markers?</strong></summary>
+
+Git inserts three special markers to highlight the competing changes:
+
+| Marker | Meaning |
+|---|---|
+| `<<<<<<<` | Start of your current branch's changes |
+| `=======` | Divider between the two conflicting versions |
+| `>>>>>>>` | End of the incoming branch's changes |
+
+</details>
+
+<details>
+<summary>🛠️ <strong>How is a conflict resolved?</strong></summary>
+
+**Manual resolution** — a developer must review the conflicting sections, decide on the final content, remove the conflict markers, and complete the merge with a commit.
+
+</details>
 
 ## Repository structure
 
